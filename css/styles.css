@@ -1,0 +1,156 @@
+/* Общие стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f0f0;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Фон с градиентом и блюром */
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b, #ff6e7f, #f8b195);
+    background-size: 200% 200%;
+    filter: blur(10px);
+    z-index: 1;
+    animation: gradientShift 10s ease infinite;
+}
+
+/* Шапка */
+header {
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    padding: 20px;
+}
+
+header h1 {
+    font-size: 4em;
+    letter-spacing: 0.1em;
+    color: #ffffff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+/* Контент */
+main {
+    padding: 40px;
+    text-align: center;
+    z-index: 2;
+}
+
+main h2 {
+    font-size: 2.8em;
+    font-weight: 700;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+}
+
+main p {
+    font-size: 1.4em;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+}
+
+/* Кнопки */
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 15px 50px;
+    margin: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #007bff;
+    border-radius: 40px;
+    font-size: 1.4em;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.4s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #007bff;
+    color: white;
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.4);
+    transform: translateY(-5px);
+}
+
+/* Анимации и эффекты */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+header, main, footer {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Адаптивность для мобильных и планшетов */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.8em;
+    }
+
+    main h2 {
+        font-size: 2.2em;
+    }
+
+    main p {
+        font-size: 1.1em;
+    }
+
+    .btn {
+        padding: 12px 30px;
+        font-size: 1.1em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    main h2 {
+        font-size: 1.8em;
+    }
+
+    main p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 10px 25px;
+        font-size: 1em;
+    }
+}
